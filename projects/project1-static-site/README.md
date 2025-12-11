@@ -17,3 +17,10 @@ Hosted my AWS journey site at [gmmguerra.com](https://gmmguerra.com). Used S3 fo
 
 ## Code/Config
 - Bucket Policy: [bucket-policy.json](bucket-policy.json)
+
+## Project 1 – Final Secure Static Site (Dec 2025 best practices)
+- Private S3 bucket + OAC (no public access)
+- Correct bucket policy with ListBucket + GetObject
+- CloudFront Default Root Object = index.html (fixed XML directory listing bug)
+- Custom 404 page via CloudFront error response
+- Live at https://gmmguerra.com
