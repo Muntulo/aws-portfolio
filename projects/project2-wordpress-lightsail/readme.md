@@ -49,9 +49,6 @@ From my hands-on setup documented at [AWS Hands-On Projects #2 Blog Post](https:
 - DNS propagation delays caused initial 404s—resolved by flushing local DNS cache.
 - Default Bitnami WP image needed immediate password change for security.
 
-## PDF Suggestions vs. What I Implemented
-The PDF outlines a basic flow (create instance > access WP > customize), but lacks 2025 updates like auto-HTTPS and monitoring. Here's a comparison:
-
 ## Code/Config Snippets
 - **Static IP Attachment Script** (Optional CLI for repeatability):
   ```bash
