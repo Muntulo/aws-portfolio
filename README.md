@@ -23,7 +23,7 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Let’s Encrypt SSL via certbot (or ACM certificate if behind ALB later)
 - CloudWatch Agent for logs and metrics
 - Elastic IP attached for permanent address
-- Live at http://ec2.gmmguerra.com
+- Live at 52.201.28.243
 
 ## Project 4 – Scalable Web App with ALB & Auto Scaling (Dec 2025 best practices)
 - EC2 ASG (2-4 t3.micro instances) behind internet-facing ALB with health checks
