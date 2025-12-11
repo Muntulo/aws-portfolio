@@ -24,3 +24,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - CloudWatch Agent for logs and metrics
 - Elastic IP attached for permanent address
 - Live at http://ec2.gmmguerra.com
+
+## Project 4 – Scalable Web App with ALB & Auto Scaling (Dec 2025 best practices)
+- EC2 ASG (2-4 t3.micro instances) behind internet-facing ALB with health checks
+- Launch template with user data for Apache + unique instance greeting
+- CPU target tracking scaling (50% threshold) + CloudWatch alarms
+- Route 53 alias to ALB DNS for seamless access
+- Load tested with Apache Bench to verify auto-scale-out
