@@ -52,13 +52,6 @@ From my hands-on setup documented at [AWS Hands-On Projects #2 Blog Post](https:
 ## PDF Suggestions vs. What I Implemented
 The PDF outlines a basic flow (create instance > access WP > customize), but lacks 2025 updates like auto-HTTPS and monitoring. Here's a comparison:
 
-| PDF Step | What I Did (Blog-Aligned) | Improvements Applied (2025 Best Practices) |
-|----------|---------------------------|--------------------------------------------|
-| Create Lightsail instance with WP blueprint | Selected nano plan in us-east-1; launched via console. | Added tags (`Project:Portfolio`, `Environment:Prod`) for cost allocation (PDF ties to Section 3 tagging). Used Graviton (ARM) plan for 20% cost savings if available. |
-| Access and configure WP admin | SSH'd in, updated via dashboard. | Enforced HTTPS redirect in .htaccess; integrated CloudWatch Agent for basic metrics (e.g., CPU >80% alarms – PDF 8.1 extension). |
-| Point domain (implied) | Route 53 A record to static IP. | Added Route 53 health checks for failover (prep for multi-AZ in Project 6). |
-| Basic maintenance (not detailed) | Enabled snapshots. | Automated backups to S3 via UpdraftPlus; set firewall (Lightsail > Networking > Allow SSH/HTTP/HTTPS only). |
-
 ## Code/Config Snippets
 - **Static IP Attachment Script** (Optional CLI for repeatability):
   ```bash
