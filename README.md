@@ -31,3 +31,12 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - CPU target tracking scaling (50% threshold) + CloudWatch alarms
 - Route 53 alias to ALB DNS for seamless access
 - Load tested with Apache Bench to verify auto-scale-out
+
+## Project 5 – Multi-Tier Web Application (Dec 2025 best practices)
+- Custom VPC with public/private subnets across 2 AZs and Regional NAT Gateway
+- Internet-facing ALB with HTTPS termination (ACM wildcard cert) and HTTP → HTTPS redirect
+- Auto Scaling Group of Graviton t2.micro (free tier) instances in private subnets
+- Private RDS MySQL database with secure connection from web tier
+- Least-privilege Security Groups
+- CloudWatch alarms for CPU utilization
+- Live at https://app.gmmguerra.com (PHP app with database-backed visit counter)
