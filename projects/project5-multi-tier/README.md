@@ -24,7 +24,7 @@ https://app.gmmguerra.com – Simple PHP app demonstrating database connectivity
 
 ## Screenshots
 
-- `ss03 - vpc overview.png` – VPC with public/private subnets and Regional NAT
+- `vpc overview.png` – VPC with public/private subnets and Regional NAT
 - `security-groups-list.png` – Least-privilege SG rules (ALB → EC2 → RDS)
 - `alb-https-listener.png` – HTTPS listener with ACM cert + HTTP redirect
 - `asg-private-subnets.png` – ASG in private subnets with healthy targets
