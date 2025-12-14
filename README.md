@@ -40,3 +40,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Least-privilege Security Groups
 - CloudWatch alarms for CPU utilization
 - Live at https://app.gmmguerra.com (PHP app with database-backed visit counter)
+
+## Project 6 – Serverless Static Website (Dec 2025 best practices)
+- Private S3 bucket with OAC for secure origin
+- CloudFront CDN on Free plan with CloudFront Functions for edge logic (geo headers)
+- ACM wildcard HTTPS + HTTP → HTTPS redirect
+- Route 53 alias for custom domain
+- Live at https://serverless.gmmguerra.com (responsive portfolio page with client-side features)
