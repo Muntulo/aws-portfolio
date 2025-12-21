@@ -1,16 +1,44 @@
-# React + Vite
+# Project 7 – Progressive Web App (PWA) Hosting with AWS Amplify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Deployed a modern Progressive Web App using AWS Amplify for full-stack serverless frontend hosting. The app is built with React + Vite and includes PWA features like offline support, installable "Add to Home Screen", and service worker caching.
 
-Currently, two official plugins are available:
+This project demonstrates how to go from local development to global deployment with automatic CI/CD, custom domain, and HTTPS — all with zero server management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Key AWS Services Used**
+- **AWS Amplify** – CI/CD, hosting, global CDN, custom domain
+- **Amazon CloudFront** – Global edge caching (powered by Amplify)
+- **Amazon Certificate Manager (ACM)** – Free SSL certificate
+- **Route 53** – Custom domain routing
 
-## React Compiler
+**Live Demo**  
+https://pwa.gmmguerra.com
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features Implemented
+- Offline functionality (service worker caches assets)
+- Installable on mobile and desktop ("Add to Home Screen")
+- Fast loading via global CDN
+- Automatic builds and deploys on every Git push
+- HTTPS with custom domain
+- Responsive design
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Production Preview Offline](screenshots/ss01-pwa-full-layout-restored.png)  
+*Production build working offline*
+
+![Amplify Successful Deploy](screenshots/ss02-deploy-success.png)  
+*Successful build and deployment log*
+
+![Live PWA on Custom Domain](screenshots/ss03-pwa-live-amplify.png)  
+*Final site live with HTTPS and PWA features*
+
+## Architecture & Improvements
+- Used Vite + React (2025 standard) instead of outdated Create React App
+- Deployed from subfolder in main portfolio repo via Amplify app root setting
+- Full PWA capabilities with `vite-plugin-pwa`
+- Zero ongoing cost (Amplify free tier covers demo traffic)
+
+This project shows modern frontend deployment workflow — from local dev to global serverless hosting with CI/CD.
+
+Built December 2025.
