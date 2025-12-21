@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  color: #232f3e;
+  margin-bottom: 0.5rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  color: #ff9900;
+  margin-bottom: 1rem;
+}
+
+.main h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #232f3e;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.project {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+}
+
+.project h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #232f3e;
+}
+
+.project p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.project a {
+  display: inline-block;
+  background: #ff9900;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.project a:hover {
+  background: #e68900;
+}
+
+footer {
+  margin-top: 5rem;
+  padding: 2rem;
+  color: #666;
+  font-size: 1rem;
+  width: 100%;
+}
