@@ -47,3 +47,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - ACM wildcard HTTPS + HTTP → HTTPS redirect
 - Route 53 alias for custom domain
 - Live at https://serverless.gmmguerra.com (responsive portfolio page with client-side features)
+
+## Project 7 – Progressive Web App Hosting (Dec 2025 best practices)
+- Modern React + Vite PWA deployed with AWS Amplify CI/CD
+- Automatic builds on GitHub push, global CDN hosting
+- Offline support, installable on mobile/desktop
+- ACM HTTPS + Route 53 custom domain
+- Live at https://pwa.gmmguerra.com
