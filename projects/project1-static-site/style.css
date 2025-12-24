@@ -24,8 +24,9 @@ body {
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: 3.25em;
     margin: 0 0 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
@@ -112,3 +113,97 @@ footer a {
     color: #FF9900;
     text-decoration: none;
 }
+
+/* Your existing styles remain unchanged up to here... */
+
+/* Enhanced Bubble-like Project Cards */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* More vertical space between projects */
+    margin-top: 40px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white for subtle glass feel */
+    backdrop-filter: blur(10px); /* Optional glassmorphism blur – works in modern browsers */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 32px; /* High radius for bubble/rounded wrap effect */
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.project-card h3 {
+    color: #232F3E;
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 3px solid #FF9900;
+    padding-bottom: 12px;
+}
+
+.project-card p {
+    line-height: 1.7;
+}
+
+.project-card ul {
+    padding-left: 24px;
+    line-height: 1.8;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #FF9900;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Social Buttons in Hero */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #FF9900;
+    transform: translateY(-3px);
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* Optional: Alternate section background for contrast (uncomment if desired) */
+/*
+.section:nth-child(even) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+}
+*/

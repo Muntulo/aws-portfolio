@@ -3,67 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My AWS Career Journey - [Your Name]</title>
+    <title>Gustavo Guerra - AWS Projects Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hero Section: Intro -->
-    <header class="hero">
-        <img src="Profile_Pic_2.jpg" alt="Your Photo" class="profile-pic"> <!-- Optional: Add your photo here -->
-        <h1>Welcome to My AWS Career Journey</h1>
-        <p>From foundational cloud concepts to AI and architecture, I'm building a career in AWS cloud and AI. Recently certified in Cloud Practitioner, AI Practitioner, and Solutions Architect – Associate. Next up: Developer – Associate!</p>
-        <button onclick="scrollToSection('certs')">Explore My Certifications</button>
+    <!-- Hero Section -->
+    <header class="hero">    
+        <h1>Gustavo Guerra</h1>
+        <h2>AWS Solutions Architect</h2>
+        <p>Building scalable, secure, and cost-effective cloud solutions with hands-on AWS projects. Specializing in serverless, static hosting, and infrastructure automation.</p>
+    
+        <!-- New Social Buttons -->
+        <div class="social-buttons">
+            <a href="https://github.com/Muntulo" target="_blank" aria-label="GitHub" class="social-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/gustavo-guerra-aab62a38b" target="_blank" aria-label="LinkedIn" class="social-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+            <a href="mailto:gmmguerra@gmail.com" aria-label="Email" class="social-btn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+            </a>
+        </div>
+    
+        <button onclick="scrollToSection('projects')">View Projects</button>
     </header>
 
-    <!-- Certifications Section: Badges & Details -->
+    <!-- Projects Section (Main Focus) -->
+    <section id="projects" class="section">
+        <h2>Featured AWS Projects</h2>
+        <div class="projects-container">
+
+            <!-- Static Website Hosting on S3 (Project 1) -->
+            <div class="project-card">
+                <h3>Static Website Hosting (This Portfolio)</h3>
+                <p>A fully static, serverless portfolio site demonstrating foundational web hosting best practices.</p>
+                <p><strong>Technologies:</strong> Amazon S3, CloudFront, Route 53, ACM</p>
+                <ul>
+                    <li>Secure HTTPS with custom domain and free SSL</li>
+                    <li>Global CDN caching for fast load times</li>
+                    <li>Private bucket with Origin Access Control (OAC) – no public access</li>
+                    <li>Low-cost architecture (&lt; $1/month)</li>                    
+                    <li><a href="arch-project1.png" target="_blank" class="project-link">View Architecture Diagram →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project1-static-site" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+                <p><a href="#" class="project-link">Live Demo (You're here!)</a></p>
+            </div>
+
+            <!-- WordPress Blog on AWS Lightsail (Project 2) -->
+            <div class="project-card">
+                <h3>WordPress Blog on AWS Lightsail</h3>
+                <p>A fully managed, secure WordPress blog with automated backups, SSL, and firewall hardening.</p>
+                <p><strong>Technologies:</strong> AWS Lightsail, Route 53, Let’s Encrypt (bncert-tool), UpdraftPlus, Wordfence</p>
+                <ul>
+                    <li>Bitnami WordPress blueprint with static IP and Route 53 A-record</li>
+                    <li>Free Let’s Encrypt SSL with automatic renewal</li>
+                    <li>Daily snapshots, UpdraftPlus backups, and Wordfence security plugin</li>
+                    <li>Firewall restricted to HTTP/HTTPS and SSH (IP-limited)</li>
+                    <li>Live demo: <a href="https://blog.gmmguerra.com" target="_blank" class="project-link">blog.gmmguerra.com →</a></li>
+                    <li><a href="arch-project2.png" target="_blank" class="project-link">View Architecture Diagram →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project2-wordpress-lightsail" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>                
+            </div>
+           
+            <!-- EC2-based Web Server (Project 3) -->
+            <div class="project-card">
+                <h3>EC2-based Web Server</h3>
+                <p>Custom Apache web server on EC2 with security hardening, monitoring, and persistent IP.</p>
+                <p><strong>Technologies:</strong> EC2 (Amazon Linux 2023), Apache (httpd), IAM, Security Groups, CloudWatch, Elastic IP</p>
+                <ul>
+                    <li>t3.micro instance with manual Apache installation</li>
+                    <li>IMDSv2 enabled, least-privilege Security Groups, and IAM instance profile</li>
+                    <li>Let’s Encrypt SSL via Certbot</li>
+                    <li>CloudWatch Agent for logs/metrics collection</li>
+                    <li>Elastic IP for static public access (Live IP: 52.201.28.243)</li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project3-ec2-web-server" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+            </div>
+            
+            <!-- Scalable Web App with ALB & Auto Scaling (Project 4) -->
+            <div class="project-card">
+                <h3>Scalable Web App with ALB & Auto Scaling</h3>
+                <p>Highly available web app with automatic scaling behind an Application Load Balancer.</p>
+                <p><strong>Technologies:</strong> EC2, Auto Scaling Group, ALB, Launch Template, CloudWatch, Route 53</p>
+                <ul>
+                    <li>ASG (2–4 t3.micro instances) with user data for Apache setup and unique instance greetings</li>
+                    <li>Internet-facing ALB with health checks</li>
+                    <li>CPU-based scaling policies (50% threshold) and CloudWatch alarms</li>
+                    <li>Route 53 alias to ALB DNS</li>
+                    <li>Load tested with Apache Bench to verify scaling</li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project4-scalable-alb" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+            </div>
+            
+            <!-- Multi-Tier Web Application (Project 5) -->
+            <div class="project-card">
+                <h3>Multi-Tier Web App with VPC & RDS</h3>
+                <p>Secure multi-tier architecture with public web, private app/database tiers across AZs.</p>
+                <p><strong>Technologies:</strong> VPC, ALB, EC2 ASG, RDS MySQL, ACM, Security Groups, NAT Gateway, CloudWatch</p>
+                <ul>
+                    <li>Custom VPC with public/private subnets in 2 AZs and NAT Gateway</li>
+                    <li>ALB with ACM wildcard cert, HTTPS termination, and redirect</li>
+                    <li>ASG in private subnets (Graviton instances) connected to private RDS</li>
+                    <li>Least-privilege Security Groups and CloudWatch monitoring</li>
+                    <li>Live demo (PHP visit counter app): <a href="https://app.gmmguerra.com" target="_blank" class="project-link">app.gmmguerra.com →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project5-multi-tier" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+            </div>
+            
+            <!-- Serverless Static Website with Edge Logic (Project 6) -->
+            <div class="project-card">
+                <h3>Serverless Static Website with CloudFront Functions</h3>
+                <p>Advanced serverless static site with edge computing for enhanced security and interactivity.</p>
+                <p><strong>Technologies:</strong> S3, CloudFront, OAC, ACM, CloudFront Functions, Route 53</p>
+                <ul>
+                    <li>Private bucket with OAC restriction</li>
+                    <li>CloudFront Functions for edge logic (e.g., geo headers)</li>
+                    <li>ACM wildcard cert with HTTP → HTTPS redirect</li>
+                    <li>Route 53 alias for custom domain</li>
+                    <li>Live demo (responsive portfolio): <a href="https://serverless.gmmguerra.com" target="_blank" class="project-link">serverless.gmmguerra.com →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project6-serverless-static-website" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+            </div>
+            
+            <!-- Progressive Web App Hosting (Project 7) -->
+            <div class="project-card">
+                <h3>Progressive Web App Hosting with Amplify</h3>
+                <p>Deployed a modern Progressive Web App (PWA) using serverless frontend hosting.</p>
+                <p><strong>Technologies:</strong> AWS Amplify, Vite + React, CloudFront, ACM</p>
+                <ul>
+                    <li>Full CI/CD pipeline from GitHub with automatic builds</li>
+                    <li>Global CDN distribution with HTTPS and custom domain</li>
+                    <li>Offline support and "Add to Home Screen" capability</li>
+                    <li>Zero server management – fully serverless</li>
+                    <li>Live demo: <a href="https://pwa.gmmguerra.com" target="_blank" class="project-link">pwa.gmmguerra.com →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project7-pwa-hosting" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>                                         
+            </div>
+            
+            <div class="project-card">
+                <h3>Containerized Serverless API with AWS App Runner</h3>
+                <p>A fully managed containerized Node.js/Express API, showcasing serverless containers with zero infrastructure management.</p>
+                <p><strong>Technologies:</strong> AWS App Runner, Amazon ECR, Docker, Node.js/Express</p>
+                <ul>
+                    <li>Docker container built locally with lightweight node:20-slim base image</li>
+                    <li>Pushed to private ECR repository for secure storage</li>
+                    <li>App Runner service with automatic HTTPS, health checks, and auto-scaling</li>
+                    <li>No EC2, VPC, or ALB required — pure serverless container hosting</li>
+                    <li>Live Demo: <a href="https://exx24tmpap.us-east-1.awsapprunner.com" target="_blank" class="project-link">Simple Hello API →</a></li>                    
+                    <li><a href="https://github.com/Muntulo/aws-portfolio" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                </ul>
+            </div>
+            
+            <!-- Add more project cards here as you complete them from Build_now.pdf -->
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Cloud Platforms:</strong> AWS (S3, CloudFront, EC2, Lightsail, Route 53, ACM, VPC, ALB)</li>
+            <li><strong>Programming & Scripting:</strong> Python (boto3 ready), HTML/CSS/JS</li>
+            <li><strong>DevOps & Tools:</strong> Git, Infrastructure as Code (learning Terraform/CDK)</li>
+            <li><strong>Other:</strong> Serverless concepts, networking, security best practices</li>
+        </ul>
+    </section>
+
+    <!-- Certifications Section -->
     <section id="certs" class="section">
-        <h2>AWS Certifications</h2>
+        <h2>Credentials & Certifications</h2>
         <div class="badge-grid">
             <div class="badge-item">
-                <img src="aws-certified-cloud-practitioner.png" alt="AWS Cloud Practitioner Badge">
-                <p>AWS Certified Cloud Practitioner<br>(Passed June 2025)</p>
+                <img src="aws-certified-cloud-practitioner.png" alt="AWS Cloud Practitioner">
+                <p>AWS Certified Cloud Practitioner<br>(June 2025)</p>
             </div>
             <div class="badge-item">
-                <img src="aws-certified-ai-practitioner.png" alt="AWS AI Practitioner Badge">
-                <p>AWS Certified AI Practitioner<br>(Passed July 2025) – Early Adopter Badge Earned!</p>
+                <img src="aws-certified-ai-practitioner.png" alt="AWS AI Practitioner">
+                <p>AWS Certified AI Practitioner<br>(July 2025 – Early Adopter)</p>
             </div>
             <div class="badge-item">
-                <img src="aws-certified-solutions-architect-associate.png" alt="AWS Solutions Architect Associate Badge">
-                <p>AWS Certified Solutions Architect – Associate<br>(Passed November 2025)</p>
+                <img src="aws-certified-solutions-architect-associate.png" alt="AWS Solutions Architect Associate">
+                <p>AWS Certified Solutions Architect – Associate<br>(November 2025)</p>
             </div>
             <div class="badge-item">
-                <img src="well-architected-proficient.png" alt="AWS Well-Architected Framework Badge">
-                <p>AWS Well-Architected Proficient – Associate<br>(Passed September 2025)</p>
+                <img src="well-architected-proficient.png" alt="Well-Architected Proficient">
+                <p>AWS Well-Architected Proficient<br>(September 2025)</p>
             </div>
             <div class="badge-item">
-                <img src="google-ai-essentials-v1.png" alt="Google AI Essentials Badge">
-                <p>Google AI Essentials Certified – Associate<br>(Passed September 2025)</p>
+                <img src="google-ai-essentials-v1.png" alt="Google AI Essentials">
+                <p>Google AI Essentials<br>(September 2025)</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section: Text & Highlights -->
-    <section id="skills" class="section">
-        <h2>Skills & Milestones</h2>
-        <ul>
-            <li><strong>Foundational IT:</strong> CompTIA A+ (2010) – Hardware, software, and troubleshooting basics.</li>
-            <li><strong>Programming:</strong> Python for Everybody (Coursera) – Scripting, data handling, and automation ready for AWS SDK (boto3).</li>
-            <li><strong>Projects:</strong> Building hands-on AWS apps, like this static site on S3 + CloudFront!</li>
-            <li><strong>Next Steps:</strong> Diving into Developer – Associate for serverless and CI/CD mastery.</li>
-        </ul>
-        <p>Excited to apply these in cloud/AI roles—let's connect!</p>
-    </section>
-
-    <!-- Footer: Links -->
-<footer>
-    <p>&copy; 2025 Gustavo Guerra | 
-       <a href="https://www.linkedin.com/in/gustavo-guerra-aab62a38b" target="_blank">LinkedIn</a> | 
-       <a href="https://x.com/yourhandle" target="_blank">#AWSCertified</a>
-    </p>
-    <p style="margin-top: 10px;">
-        <strong>New:</strong> <a href="https://blog.gmmguerra.com" target="_blank">Read my AWS project blog →</a>
-    </p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Gustavo Guerra | 
+           <a href="https://www.linkedin.com/in/gustavo-guerra-aab62a38b" target="_blank">LinkedIn</a> | 
+           <a href="https://x.com/yourhandle" target="_blank">#AWSCertified</a>
+        </p>        
+    </footer>
 
     <script src="script.js"></script>
 </body>
