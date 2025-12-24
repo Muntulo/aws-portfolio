@@ -54,3 +54,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Offline support, installable on mobile/desktop
 - ACM HTTPS + Route 53 custom domain
 - Live at https://pwa.gmmguerra.com
+
+## [Project 8 – Containerized Serverless API with App Runner](projects/priject8-app-runner-demo/)
+- Dockerized Node.js/Express API pushed to Amazon ECR
+- Deployed with AWS App Runner — fully managed containers (no EC2, ALB, or VPC)
+- Automatic HTTPS, health checks, and auto-scaling
+- First hands-on Docker experience
+- Live at https://exx24tmpap.us-east-1.awsapprunner.com
