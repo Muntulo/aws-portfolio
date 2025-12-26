@@ -32,14 +32,15 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Route 53 alias to ALB DNS for seamless access
 - Load tested with Apache Bench to verify auto-scale-out
 
-## [Project 5 – Multi-Tier Web Application](projects/project5-multi-tier/)
-- Custom VPC with public/private subnets across 2 AZs and Regional NAT Gateway
-- Internet-facing ALB with HTTPS termination (ACM wildcard cert) and HTTP → HTTPS redirect
-- Auto Scaling Group of Graviton t2.micro (free tier) instances in private subnets
-- Private RDS MySQL database with secure connection from web tier
-- Least-privilege Security Groups
-- CloudWatch alarms for CPU utilization
-- Live at https://app.gmmguerra.com (PHP app with database-backed visit counter)
+## [Project 5 – Multi-Tier Web Application with IaC](projects/project5-multi-tier/)
+- Fully automated deployment of multi-tier application using Terraform
+- VPC with public/private subnets, Regional NAT Gateway, and route tables
+- Internet-facing ALB with HTTPS (ACM wildcard cert) and HTTP → HTTPS redirect
+- Private EC2 Auto Scaling Group (Graviton instances) with launch template
+- Private RDS MySQL database
+- Security Groups with least-privilege rules
+- Live at https://app.gmmguerra.com (when deployed)
+- Code: [projects/project5-multi-tier/iac-terraform/](projects/project5-multi-tier/iac-terraform/)
 
 ## [Project 6 – Serverless Static Website](projects/project6-serverless-static-website/)
 - Private S3 bucket with OAC for secure origin

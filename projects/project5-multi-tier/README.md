@@ -40,3 +40,20 @@ https://app.gmmguerra.com – Simple PHP app demonstrating database connectivity
 - Full HTTPS enforcement with automatic redirect
 
 This project demonstrates a production-ready architecture suitable for real-world applications requiring security, scalability, and high availability.
+
+## Infrastructure as Code (IaC) with Terraform
+Automated the entire multi-tier architecture using Terraform for repeatable, version-controlled deployments.
+
+**Key Improvements**
+- Full stack created/destroyed with `terraform apply` / `terraform destroy`
+- Used existing wildcard ACM certificate (us-east-1) for HTTPS
+- Regional NAT Gateway for resilient outbound access
+- Graviton t4g.micro instances for cost/performance
+- Zero manual console configuration after initial setup
+
+**Commands Used**
+```bash
+terraform init
+terraform plan
+terraform apply    # Creates full stack
+terraform destroy  # Cleans up to $0
