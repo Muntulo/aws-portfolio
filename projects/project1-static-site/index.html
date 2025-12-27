@@ -98,16 +98,16 @@
             
             <!-- Multi-Tier Web Application (Project 5) -->
             <div class="project-card">
-                <h3>Multi-Tier Web App with VPC & RDS</h3>
-                <p>Secure multi-tier architecture with public web, private app/database tiers across AZs.</p>
-                <p><strong>Technologies:</strong> VPC, ALB, EC2 ASG, RDS MySQL, ACM, Security Groups, NAT Gateway, CloudWatch</p>
+                <h3>Multi-Tier Web App with VPC & RDS (IaC with Terraform)</h3>
+                <p>Secure, highly available multi-tier PHP application with private database tier, deployed reproducibly using Infrastructure as Code.</p>
+                <p><strong>Technologies:</strong> VPC, ALB, EC2 Auto Scaling Group (Graviton), RDS MySQL, ACM, Security Groups, NAT Gateway, Terraform (IaC), CloudWatchh</p>
                 <ul>
-                    <li>Custom VPC with public/private subnets in 2 AZs and NAT Gateway</li>
-                    <li>ALB with ACM wildcard cert, HTTPS termination, and redirect</li>
-                    <li>ASG in private subnets (Graviton instances) connected to private RDS</li>
-                    <li>Least-privilege Security Groups and CloudWatch monitoring</li>
+                    <li>Custom VPC with public/private subnets across 2 AZs and NAT Gateway for outbound access</li>
+                    <li>Internet-facing ALB with ACM wildcard certificate, HTTPS termination, and HTTP redirect</li>
+                    <li>ASG in private subnets running Graviton-based instances, connected to private RDS MySQL</li>
+                    <li>Least-privilege Security Groups, CloudWatch monitoring, and automated infrastructure provisioning via Terraform</li>
                     <li>Live demo (PHP visit counter app): <a href="https://app.gmmguerra.com" target="_blank" class="project-link">app.gmmguerra.com →</a></li>
-                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project5-multi-tier" target="_blank" class="project-link">GitHub Documentation →</a></li>
+                    <li><a href="https://github.com/Muntulo/aws-portfolio/tree/main/projects/project5-multi-tier" target="_blank" class="project-link">GitHub Documentation (Terraform Code) →</a></li>
                 </ul>
             </div>
             
