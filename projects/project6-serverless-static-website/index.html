@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AWS Serverless Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AWS Serverless Portfolio Site</h1>
+    <p>Hosted on S3 + CloudFront • December 2025</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome!</h2>
+      <p>This site is fully serverless, globally distributed via CloudFront, and served from a private S3 bucket with OAC.</p>
+      <p class="counter">You are visitor number <span id="visit-count">1</span> to this page.</p>
+    </section>
+
+    <section class="projects">
+      <h2>Completed AWS Projects (1–9)</h2>
+      <ol>
+        <li><strong>Static Website Hosting</strong> – Secure S3 + CloudFront + Route 53 + OAC (this portfolio's foundation)</li>
+        <li><strong>WordPress Blog on Lightsail</strong> – Managed instance with SSL, firewall, and automated backups</li>
+        <li><strong>EC2-based Web Server</strong> – Custom Apache on Amazon Linux with security hardening and CloudWatch</li>
+        <li><strong>Scalable Web App with ALB & Auto Scaling</strong> – High availability with health checks and CPU-based scaling</li>
+        <li><strong>Multi-Tier Web App with VPC & RDS</strong> – Private database tier + IaC with Terraform</li>
+        <li><strong>Serverless Static with Edge Logic</strong> – CloudFront Functions for custom headers/geo detection (this site!)</li>
+        <li><strong>Containerized Serverless API</strong> – AWS App Runner + ECR (zero servers, auto-scaling containers)</li>
+        <li><strong>Serverless Image Analyzer</strong> – S3-triggered Lambda + Amazon Rekognition for label detection and moderation</li>
+      </ol>
+      <p style="margin-top: 30px; font-style: italic;">See full details, architecture diagrams, and live demos on my <a href="https://gmmguerra.com" target="_blank">main AWS portfolio →</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by Gustavo Guerra • <span id="current-year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  // Read custom header added by Lambda@Edge / CloudFront Functions
+  document.addEventListener('DOMContentLoaded', () => {
+    const countryElement = document.createElement('p');
+    countryElement.innerHTML = '<strong>Your approximate location:</strong> <span id="country">Detecting...</span>';
+    document.querySelector('.hero').appendChild(countryElement);
+
+    // Fallback client-side detection
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('country').textContent = data.country_name || 'Unknown';
+      })
+      .catch(() => {
+        document.getElementById('country').textContent = 'Unavailable';
+      });
+  });
+  </script>
+</body>
+</html>
