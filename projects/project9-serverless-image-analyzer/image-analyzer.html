@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serverless Image Analyzer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f5f7fa;
+      text-align: center;
+      color: #333;
+    }
+    h1 { color: #232f3e; }
+    #upload-area {
+      border: 3px dashed #ff9900;
+      padding: 3rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      background: white;
+    }
+    #results {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .label {
+      display: inline-block;
+      background: #ff9900;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 20px;
+    }
+    img { max-width: 100%; border-radius: 12px; margin: 1rem 0; }
+    #text { margin-top: 1rem; white-space: pre-wrap; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Serverless Image Analyzer</h1>
+  <p>Upload an image — AWS Rekognition analyzes it in real-time (serverless).</p>
+
+  <div id="upload-area">
+    <input type="file" id="image-input" accept="image/*">
+    <p>or drag and drop an image</p>
+  </div>
+
+  <div id="results" style="display:none;">
+    <h2>Analysis Results</h2>
+    <img id="preview" src="" alt="Uploaded image">
+    <h3>Detected Labels</h3>
+    <div id="labels">Analyzing...</div>
+    <h3>Detected Text</h3>
+    <div id="text">Analyzing...</div>
+  </div>
+
+  <script>
+    const presignUrl = 'https://0pq1i4uc5k.execute-api.us-east-1.amazonaws.com/prod/presign';
+    const resultsUrl = 'https://0pq1i4uc5k.execute-api.us-east-1.amazonaws.com/prod/results';
+
+    document.getElementById('image-input').addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      document.getElementById('preview').src = URL.createObjectURL(file);
+      document.getElementById('results').style.display = 'block';
+
+      // Get presigned POST
+      const presignResponse = await fetch(`${presignUrl}?filename=${encodeURIComponent(file.name)}`);
+      const presigned = await presignResponse.json();
+
+      // Upload
+      const formData = new FormData();
+      Object.entries(presigned.fields).forEach(([k, v]) => formData.append(k, v));
+      formData.append('file', file);
+
+      await fetch(presigned.url, {
+        method: 'POST',
+        body: formData
+      });
+
+      // Get results with retry (handles async analysis delay)
+      const key = `uploads/${file.name}`;  // Use original filename
+      let data;
+      let attempts = 0;
+      const maxAttempts = 10;
+
+      while (attempts < maxAttempts) {
+        try {
+          await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
+          const resultsResponse = await fetch(`${resultsUrl}?key=${encodeURIComponent(key)}`);
+          
+          if (resultsResponse.ok) {
+            data = await resultsResponse.json();
+            if (data.labels || data.text) break; // Results ready
+          }
+        } catch (error) {
+          console.log(`Attempt ${attempts + 1} failed:`, error);
+        }
+        attempts++;
+      }
+
+      if (!data) {
+        document.getElementById('labels').innerHTML = '<span class="label">Analysis timed out - try again</span>';
+        document.getElementById('text').innerText = 'Check CloudWatch logs for details';
+        return;
+      }
+
+      // Display labels
+      document.getElementById('labels').innerHTML = data.labels.length
+        ? data.labels.map(l => `<span class="label">${l}</span>`).join('')
+        : '<span class="label">No labels detected</span>';
+
+      // Display text
+      document.getElementById('text').innerText = data.text.length
+        ? data.text.join('\n')
+        : 'No text detected';
+    });
+  </script>
+</body>
+</html>

@@ -62,3 +62,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Automatic HTTPS, health checks, and auto-scaling
 - First hands-on Docker experience
 - Live at https://exx24tmpap.us-east-1.awsapprunner.com
+
+## [Project 9 – Serverless Image Analyzer](projects/project9-serverless-image-analyzer/)
+- Secure image uploads to private S3 with presigned POST URLs
+- Event-triggered Lambda + Rekognition for label/text detection
+- API Gateway for results retrieval
+- Frontend display of analysis
+- Live demo at https://serverless.gmmguerra.com/image-analyzer.html
