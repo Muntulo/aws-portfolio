@@ -76,3 +76,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - Event-driven backend with API Gateway + Lambda + Bedrock
 - Simple chat frontend hosted on existing serverless static site
 - Live demo at https://serverless.gmmguerra.com/chat-bot.html
+
+## [Project 11 – AI Text Summarizer](projects/project11-ai-text-summarizer/)
+- Serverless text summarizer using Amazon Bedrock Claude
+- Paste text → Get concise bullet-point summary in real-time
+- API Gateway + Lambda backend
+- Hosted on existing serverless static site
+- Live at https://serverless.gmmguerra.com/summarizer.html
