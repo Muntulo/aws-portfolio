@@ -69,3 +69,10 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - API Gateway for results retrieval
 - Frontend display of analysis
 - Live demo at https://serverless.gmmguerra.com/image-analyzer.html
+
+## [Project 10 – AI-Powered Chat Bot with RAG](projects/project10-ai-powered-chat-bot/)
+- Serverless RAG chatbot using Amazon Bedrock Knowledge Bases for retrieval-augmented generation
+- PDFs of AWS certification exam guides ingested for accurate, grounded responses
+- Event-driven backend with API Gateway + Lambda + Bedrock
+- Simple chat frontend hosted on existing serverless static site
+- Live demo at https://serverless.gmmguerra.com/chat-bot.html

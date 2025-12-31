@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Certification FAQ Bot</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem; background: #f5f7fa; text-align: center; }
+    h1 { color: #232f3e; }
+    #chat-area { border: 1px solid #ddd; padding: 1rem; height: 400px; overflow-y: scroll; background: white; margin-bottom: 1rem; border-radius: 12px; text-align: left; }
+    #chat-input { width: 80%; padding: 1rem; border: 1px solid #ff9900; border-radius: 6px; }
+    button { padding: 1rem; background: #ff9900; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #e68900; }
+    .message { padding: 1rem; margin: 0.5rem 0; border-radius: 8px; }
+    .user { background: #ff9900; color: white; text-align: right; }
+    .bot { background: #232f3e; color: white; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>AWS Certification FAQ Bot</h1>
+  <p>Ask questions about AWS certifications (e.g., "List the 4 domains with percentages for SAA-C03")</p>
+
+  <div id="chat-area"></div>
+
+  <input type="text" id="chat-input" placeholder="Type your question...">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    const apiUrl = 'https://xai0znavwd.execute-api.us-east-1.amazonaws.com/prod/query';  // Your API URL
+
+    async function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      addMessage('user', query);
+      input.value = '';
+
+      try {
+        const response = await fetch(`${apiUrl}?query=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        addMessage('bot', data.response);
+      } catch (error) {
+        addMessage('bot', 'Error: ' + error.message);
+      }
+    }
+
+    function addMessage(sender, text) {
+      const chatArea = document.getElementById('chat-area');
+      const msg = document.createElement('div');
+      msg.classList.add('message', sender);
+      msg.innerText = text;
+      chatArea.appendChild(msg);
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+  </script>
+</body>
+</html>
