@@ -31,6 +31,7 @@ Hands-on AWS projects demonstrating skills in hosting, scaling, security, and mo
 - CPU target tracking scaling (50% threshold) + CloudWatch alarms
 - Route 53 alias to ALB DNS for seamless access
 - Load tested with Apache Bench to verify auto-scale-out
+- Automated with AWS CDK (Python) for code-based IaC
 
 ## [Project 5 – Multi-Tier Web Application with IaC](projects/project5-multi-tier/)
 - Fully automated deployment of multi-tier application using Terraform
